@@ -1,15 +1,11 @@
-local custom_lsp = require "lspconfig"
-
 local servers = {
-  clangd = require "custom.configs.lspconfig.clangd",
+  -- other servers
+  "clangd",
 }
 
-return {
-  config = function()
-    local lspconfig = require "lspconfig"
+local custom_configs = require("configs") -- <-- this should be your folder
 
-    for name, config in pairs(servers) do
-      lspconfig[name].setup(config)
-    end
-  end,
-}
+for _, server in ipairs(servers) do
+  local opts = custom_configs[server] or {}
+  lspconfig[server].setup(opts)
+end
