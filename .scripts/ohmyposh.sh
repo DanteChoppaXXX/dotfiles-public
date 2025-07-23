@@ -19,7 +19,7 @@ mkdir -p ~/.poshthemes
 # curl -Lo ~/.poshthemes/alien.omp.json https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/alien.omp.json
 
 # Edit fish config file "~/.config/fish/config.fish"
-oh-my-posh init fish --config ~/jandedobbeleer.omp.json | source
+oh-my-posh init fish --config ~/.poshthemes/alien.omp.json | source
 
 # Reload config after making any changes
 exec fish
